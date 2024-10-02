@@ -9,17 +9,15 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>ReQuest</h1>
-            <p><i class="fas fa-scroll"></i> The Quest for Freelance Work Begins</p>
-        </div>
+        <h1>ReQuest</h1>
+        <p><i class="fas fa-scroll"></i> The Quest for Freelance Work Begins</p>
         <nav>
             <ul>
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#quests"><i class="fas fa-list"></i> Quest Board</a></li>
-                <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
-                <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
-                <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -33,33 +31,45 @@
 
         <section id="quests">
             <h2><i class="fas fa-list-alt"></i> Quest Board</h2>
+            <div class="quest-navigation">
+                <button class="nav-button" id="prev-quest"><i class="fas fa-arrow-left"></i></button>
+                <button class="nav-button" id="next-quest"><i class="fas fa-arrow-right"></i></button>
+            </div>
             <div class="quest-board">
-                <div class="quest">
-                    <h3><i class="fas fa-code"></i> The Coding Conundrum</h3>
-                    <p>Help a client with a tricky piece of code. Expertise in JavaScript required.</p>
-                    <ul>
-                        <li><i class="fas fa-coins"></i> Reward: 300 gold coins (USD)</li>
-                        <li><i class="fas fa-exclamation-triangle"></i> Difficulty: Medium</li>
-                        <li><i class="fas fa-clock"></i> Time Limit: 5 days</li>
-                    </ul>
-                    <button class="apply-button"><i class="fas fa-check"></i> Accept Quest</button>
-                </div>
-                <div class="quest">
-                    <h3><i class="fas fa-paint-brush"></i> The Designer's Dilemma</h3>
-                    <p>Design a website with a modern twist, but with fantasy influences. Figma and CSS experience needed.</p>
-                    <ul>
-                        <li><i class="fas fa-coins"></i> Reward: 500 gold coins (USD)</li>
-                        <li><i class="fas fa-exclamation-triangle"></i> Difficulty: Hard</li>
-                        <li><i class="fas fa-clock"></i> Time Limit: 7 days</li>
-                    </ul>
-                    <button class="apply-button"><i class="fas fa-check"></i> Accept Quest</button>
-                </div>
+                <!-- Quests will be dynamically loaded here -->
             </div>
         </section>
+
+        <section id="about">
+            <h2><i class="fas fa-info-circle"></i> About Us</h2>
+            <p>Welcome to ReQuest, the ultimate platform for freelancers and clients. We bridge the gap between those looking for creative talents and those in need of exciting projects. Join our community and embark on your freelance journey today!</p>
+        </section>
+
+        <section id="testimonials">
+            <h2><i class="fas fa-comments"></i> Testimonials</h2>
+            <div class="testimonial-container">
+                <p>"ReQuest has transformed the way I find work. I love the variety of quests available!" - A Happy Freelancer</p>
+                <p>"The quality of freelancers I have found on ReQuest is outstanding." - A Satisfied Client</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </section>
+
+        <button id="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i></button>
     </main>
 
     <footer>
         <p>&copy; 2024 ReQuest - Freelance in Fantasy Style. All Rights Reserved. <i class="fas fa-dragon"></i></p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

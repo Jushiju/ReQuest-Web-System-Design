@@ -6,167 +6,166 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #e8e4d8;
-    color: #333;
+    background: #1C1C1C;
+    color: #FAFAFA;
     line-height: 1.6;
 }
 
 header {
-    background-color: #2c2f33;
-    color: #ffffff;
+    background: #B22222;
+    color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    text-align: center;
-}
-
-header .logo h1 {
-    font-size: 3em;
-    font-family: 'Georgia', serif;
-}
-
-header .logo p {
-    font-size: 1.2em;
-    margin-top: 5px;
 }
 
 nav ul {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin-top: 20px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
-nav ul li a {
-    color: #ffffff;
+nav a {
+    color: #FAFAFA;
     text-decoration: none;
-    font-size: 1.2em;
 }
 
-nav ul li a:hover {
+nav a:hover {
     text-decoration: underline;
 }
 
 #hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    color: #fff;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: url('images/images-1.jpg') no-repeat center center/cover;
+    padding: 50px;
     text-align: center;
-    padding: 20px;
-}
-
-#hero h2 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-#hero p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #7289da;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #5865f2;
+    border-radius: 10px;
+    margin: 20px auto;
+    color: #FAFAFA;
 }
 
 #quests {
-    padding: 50px;
-    text-align: center;
+    background: url('images/images-2.jpg') no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    color: #FAFAFA;
 }
 
-#quests h2 {
-    font-size: 2.5em;
+.quest-navigation {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
+.nav-button {
+    background: #B22222;
+    color: #FAFAFA;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
 .quest-board {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .quest {
-    background-color: #f4f4f4;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 15px 0;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
+    transition: transform 0.2s;
 }
 
-.quest h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.quest p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.quest ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.quest ul li {
-    margin-bottom: 5px;
+.quest:hover {
+    transform: scale(1.02);
 }
 
 .apply-button {
-    padding: 10px 15px;
-    background-color: #2c2f33;
-    color: #fff;
+    background: #B22222;
+    color: #FAFAFA;
+    padding: 8px 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 .apply-button:hover {
-    background-color: #5865f2;
-}
-
-i {
-    margin-right: 8px;
-}
-
-#hero i {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.quest-board .quest h3 i {
-    color: #7289da;
-}
-
-.apply-button i {
-    margin-right: 5px;
+    background: #A61C1C;
 }
 
 footer {
-    background-color: #2c2f33;
-    color: #ffffff;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    background-color: #B22222;
+    color: #FAFAFA;
+    padding: 10px;
 }
 
-footer i {
-    font-size: 1.5em;
-    color: #7289da;
+#about {
+    background: url('images/images-3.jpg') no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    color: #FAFAFA;
+}
+
+#testimonials {
+    background: url('images/images-4.jpg') no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    color: #FAFAFA;
+}
+
+#contact {
+    background: url('images/images-5.jpg') no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    color: #FAFAFA;
+}
+
+#contact-form input, #contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #B22222;
+    border-radius: 4px;
+}
+
+#contact-form button {
+    background: #B22222;
+    color: #FAFAFA;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background: #A61C1C;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #B22222;
+    color: #FAFAFA;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    display: none;
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    background: #A61C1C;
 }
