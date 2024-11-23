@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Google Font for Fantasy Style -->
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        .advertising-card {
+            background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+        .advertising-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+        .advertising-image {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -111,13 +130,15 @@
     </section>
 
     <!-- Advertising Section -->
-    <section class="container py-5 bg-light text-center">
-        <h2 style="font-family: 'Uncial Antiqua', cursive;">Up your work game, it’s easy</h2>
-        <p>No cost to join. Register and browse talent profiles, explore projects, or even book a consultation.</p>
-        <p>Post a job and hire top talent. Finding talent doesn’t have to be a chore. Post a job or we can search for you!</p>
-        <p>Work with the best—without breaking the bank. ReQuest makes it affordable to up your work and take advantage of low transaction rates.</p>
-        <img src="assets/advertising-image.jpg" alt="Advertising" class="img-fluid my-4">
-        <a href="signup.html" class="btn btn-dark btn-lg" style="font-weight: bold; font-size: 1.3rem;">Join Now</a>
+    <section class="container py-5 advertising-section text-center">
+        <div class="advertising-card">
+            <h2 style="font-family: 'Uncial Antiqua', cursive;">Up your work game, it’s easy</h2>
+            <p>No cost to join. Register and browse talent profiles, explore projects, or even book a consultation.</p>
+            <p>Post a job and hire top talent. Finding talent doesn’t have to be a chore. Post a job or we can search for you!</p>
+            <p>Work with the best—without breaking the bank. ReQuest makes it affordable to up your work and take advantage of low transaction rates.</p>
+            <img src="assets/advertising-image.jpg" alt="Advertising" class="advertising-image">
+            <a href="signup.html" class="btn btn-dark btn-lg" style="font-weight: bold; font-size: 1.3rem;">Join Now</a>
+        </div>
     </section>
 
     <!-- Featured Adventurers Section with Ratings -->
@@ -138,9 +159,9 @@
                 <div class="card">
                     <img src="assets/adventurer2.jpg" class="card-img-top" alt="Adventurer 2">
                     <div class="card-body">
-                        <h5 class="card-title">Eldon the Wise</h5>
-                        <p class="card-text">A mage with centuries of knowledge.</p>
-                        <p><strong>Rating: 4.9/5</strong></p>
+                        <h5 class="card-title">Mael the Wise</h5>
+                        <p class="card-text">Masterful mage with ancient knowledge.</p>
+                        <p><strong>Rating: 5/5</strong></p>
                     </div>
                 </div>
             </div>
