@@ -48,3 +48,18 @@ document.querySelectorAll('.card').forEach(card => {
         }
     }
 });
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to populate the search bar based on the category query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    
+    if (category) {
+        const searchInput = document.querySelector('input[type="search"]');
+        if (searchInput) {
+            // Replace hyphens with spaces for better readability
+            searchInput.value = category.replace(/-/g, ' ');
+        }
+    }
+});
