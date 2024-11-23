@@ -39,16 +39,13 @@
             border-radius: 20px;
             padding: 10px;
         }
-        .hidden {
-            display: none !important;
-        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="assets/logo.png" alt="ReQuest Logo" style="height: 50px;">
                 <span style="font-family: 'Uncial Antiqua', cursive; font-size: 1.5rem; color: #fff;">ReQuest</span>
             </a>
@@ -78,38 +75,63 @@
     <!-- Filters Section -->
     <section class="container mt-4">
         <div class="filter-section d-flex justify-content-between align-items-center">
-            <input type="text" id="searchInput" class="form-control search-input w-50" placeholder="Search Quests...">
+            <input type="text" id="search-bar" class="form-control search-input w-50" placeholder="Search Quests...">
             <div>
-                <button class="btn btn-light me-2 filter-btn" data-filter="all">All</button>
-                <button class="btn btn-light me-2 filter-btn" data-filter="Web Development">Web Development</button>
-                <button class="btn btn-light me-2 filter-btn" data-filter="Design">Design</button>
-                <button class="btn btn-light filter-btn" data-filter="Writing">Writing</button>
+                <button class="btn btn-light me-2 filter-btn" data-category="all">All</button>
+                <button class="btn btn-light me-2 filter-btn" data-category="web-development">Web Development</button>
+                <button class="btn btn-light me-2 filter-btn" data-category="design">Design</button>
+                <button class="btn btn-light filter-btn" data-category="writing">Writing</button>
             </div>
         </div>
     </section>
 
     <!-- Job Listings -->
-    <section class="container my-5">
-        <div class="row gy-4" id="questList">
-            <div class="col-md-4 quest-card" data-category="Web Development">
-                <h5>Build a Responsive Website</h5>
-                <p>Looking for a web developer to create a modern, responsive website for my business.</p>
-                <p><strong>Reward:</strong> $500</p>
-                <a href="#" class="btn btn-sm">View Details</a>
+    <section class="container my-5" id="job-list">
+        <div class="row gy-4">
+            <!-- Repeated Quest Cards -->
+            <div class="col-md-4 quest-card-container" data-category="web-development">
+                <div class="quest-card">
+                    <h5>Build a Responsive Website</h5>
+                    <p>Looking for a web developer to create a modern, responsive website for my business.</p>
+                    <p><strong>Reward:</strong> $500</p>
+                    <a href="job-details.html" class="btn btn-sm">View Details</a>
+                </div>
             </div>
-            <div class="col-md-4 quest-card" data-category="Design">
-                <h5>Logo Design for E-commerce</h5>
-                <p>Need a creative designer to craft a logo for my online store.</p>
-                <p><strong>Reward:</strong> $200</p>
-                <a href="#" class="btn btn-sm">View Details</a>
+            <div class="col-md-4 quest-card-container" data-category="design">
+                <div class="quest-card">
+                    <h5>Logo Design for E-commerce</h5>
+                    <p>Need a creative designer to craft a logo for my online store.</p>
+                    <p><strong>Reward:</strong> $200</p>
+                    <a href="job-details.html" class="btn btn-sm">View Details</a>
+                </div>
             </div>
-            <div class="col-md-4 quest-card" data-category="Writing">
-                <h5>Translate a Novel</h5>
-                <p>Seeking an experienced translator to translate a fantasy novel from French to English.</p>
-                <p><strong>Reward:</strong> $800</p>
-                <a href="#" class="btn btn-sm">View Details</a>
+            <div class="col-md-4 quest-card-container" data-category="writing">
+                <div class="quest-card">
+                    <h5>Translate a Novel</h5>
+                    <p>Seeking an experienced translator to translate a fantasy novel from French to English.</p>
+                    <p><strong>Reward:</strong> $800</p>
+                    <a href="job-details.html" class="btn btn-sm">View Details</a>
+                </div>
             </div>
+            <!-- Add more cards here following the same format with different categories -->
         </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="container my-4 text-center">
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </section>
 
     <!-- Footer -->
@@ -117,38 +139,27 @@
         <p>&copy; 2024 ReQuest. Your journey begins here.</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const searchInput = document.getElementById("searchInput");
-            const questCards = document.querySelectorAll(".quest-card");
-            const filterButtons = document.querySelectorAll(".filter-btn");
+        const searchInput = document.getElementById("search-bar");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const questCards = document.querySelectorAll(".quest-card-container");
 
-            // Filter by category
-            filterButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    const filter = button.getAttribute("data-filter");
-                    questCards.forEach(card => {
-                        const category = card.getAttribute("data-category");
-                        if (filter === "all" || category === filter) {
-                            card.classList.remove("hidden");
-                        } else {
-                            card.classList.add("hidden");
-                        }
-                    });
-                });
+        searchInput.addEventListener("input", (e) => {
+            const query = e.target.value.toLowerCase();
+            questCards.forEach(card => {
+                const title = card.querySelector("h5").textContent.toLowerCase();
+                card.style.display = title.includes(query) ? "block" : "none";
             });
+        });
 
-            // Live search
-            searchInput.addEventListener("input", () => {
-                const query = searchInput.value.toLowerCase();
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const category = button.dataset.category;
                 questCards.forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    if (text.includes(query)) {
-                        card.classList.remove("hidden");
-                    } else {
-                        card.classList.add("hidden");
-                    }
+                    const cardCategory = card.dataset.category;
+                    card.style.display = category === "all" || cardCategory === category ? "block" : "none";
                 });
             });
         });
