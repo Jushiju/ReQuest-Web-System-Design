@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ReQuest</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Font for Fantasy Style -->
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1c1c2b, #000) no-repeat;
+            color: #fff;
+            font-family: 'Uncial Antiqua', cursive;
+        }
+
+        /* Section Header Styling */
+        .section-header {
+            font-size: 2.5rem;
+            color: rgb(255, 254, 254);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* About Section Cards */
+        .about-card {
+            background: linear-gradient(135deg, #0b4e04, #45a04c);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button Styling */
+        .btn-custom {
+            background-color: #ffcc00;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-custom:hover {
+            background-color: #a88f87;
+            color: white;
+        }
+
+        /* Image Section */
+        .about-image {
+            border-radius: 15px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Parallax Section */
+        .parallax {
+            background: url('assets/hero-image.jpg') no-repeat center center/cover;
+            height: 300px;
+            position: relative;
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="ReQuest Logo" style="height: 50px;">
+                <span style="font-family: 'Uncial Antiqua', cursive; font-size: 1.5rem; color: #fff;">ReQuest</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="job-listings.html">Quests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="talent.html">Adventurers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Parallax Hero Section -->
+    <div class="parallax">
+        <div class="parallax-overlay"></div>
+    </div>
+
+    <!-- About Content -->
+    <section class="container py-5">
+        <h1 class="section-header">About <span style="color: #ffffff;">ReQuest</span></h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about-card">
+                    <h2>Our Vision</h2>
+                    <p>ReQuest is more than just a freelance platform—it's an adventure where creativity meets collaboration. Founded by Joaquin Lorenzo G. Aguilar, ReQuest immerses freelancers and clients in a world inspired by Fantasy and RPGs, transforming projects into epic quests.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="assets/about-image.jpg" alt="ReQuest Story" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Founder -->
+    <section class="container py-5">
+        <h2 class="section-header">Meet the Founder</h2>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="assets/founder.png" alt="Founder Image" class="about-image">
+            </div>
+            <div class="col-md-6">
+                <div class="about-card">
+                    <p><strong>Joaquin Lorenzo G. Aguilar</strong> is a storyteller, visionary, and avid RPG enthusiast. Inspired by the magic of fantasy worlds, he created ReQuest to empower freelancers and clients to embark on unique and fulfilling journeys together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center py-5" style="background: #1e1e2e;">
+        <h2 class="section-header">Embark on Your Quest Today</h2>
+        <p>Join our platform and discover the perfect partner for your project. From humble beginnings to epic achievements, your journey starts here.</p>
+        <a href="signup.html" class="btn btn-custom btn-lg">Start Your Adventure</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 ReQuest. Embark on Your Next Adventure!</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
