@@ -125,3 +125,13 @@ footer a {
 footer a:hover {
     color: #fff;
 }
+
+.custom-nav-link {
+  font-family: 'Uncial Antiqua', cursive; 
+  font-size: 1.1rem; 
+  color: #fff; 
+}
+
+.custom-nav-link:hover {
+  color: #f1c40f; 
+}
