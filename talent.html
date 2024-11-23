@@ -17,7 +17,7 @@
         }
         .profile-card {
             border-radius: 10px;
-            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            background: linear-gradient(135deg, #fbc02d, #f57f17);
             color: #333;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -27,7 +27,7 @@
             font-weight: bold;
         }
         .profile-card .btn {
-            background-color: #6a1b9a;
+            background-color: #f57f17;
             color: white;
         }
         .profile-image {
@@ -41,7 +41,7 @@
             color: #f39c12;
         }
         .filter-section {
-            background: #6a1b9a;
+            background: #f57f17;
             color: white;
             padding: 15px;
             border-radius: 10px;
@@ -54,12 +54,12 @@
         .search-btn {
             border-radius: 50%;
             padding: 10px;
-            background-color: #6a1b9a;
+            background-color: #f57f17;
             color: white;
             border: none;
         }
         .clear-filters {
-            background-color: #6a1b9a;
+            background-color: #f57f17;
             color: white;
             border-radius: 20px;
             padding: 10px 15px;
@@ -159,18 +159,34 @@
         const clearFiltersButton = document.getElementById("clear-filters");
 
         const talents = [
-            { name: "John Doe", experience: "beginner", skills: "web-development", bio: "Passionate about web design and development.", portfolio: "johnportfolio.com", rating: 4, img: "assets/john.jpg" },
-            { name: "Jane Smith", experience: "adept", skills: "design", bio: "Creative designer with a focus on branding.", portfolio: "janesmithdesigns.com", rating: 5, img: "assets/jane.jpg" },
-            { name: "Robert Johnson", experience: "expert", skills: "writing", bio: "Experienced technical writer with a knack for explaining complex concepts.", portfolio: "robertjohnsonwrites.com", rating: 3, img: "assets/robert.jpg" },
-            { name: "Emily Davis", experience: "expert", skills: "web-development", bio: "Full-stack developer with expertise in React and Node.js.", portfolio: "emilydavis.dev", rating: 5, img: "assets/emily.jpg" },
-            { name: "Michael Brown", experience: "beginner", skills: "design", bio: "Aspiring UX/UI designer looking for new challenges.", portfolio: "michaelbrown.design", rating: 2, img: "assets/michael.jpg" },
-            { name: "Sophia Lee", experience: "adept", skills: "writing", bio: "Content writer with a focus on SEO and digital marketing.", portfolio: "sophialeewrites.com", rating: 4, img: "assets/sophia.jpg" },
-            { name: "Daniel White", experience: "expert", skills: "web-development", bio: "Senior developer specializing in JavaScript frameworks and cloud computing.", portfolio: "danielwhite.dev", rating: 5, img: "assets/daniel.jpg" },
-            { name: "Olivia Harris", experience: "adept", skills: "design", bio: "Graphic designer with a passion for creating visuals that tell stories.", portfolio: "oliviaharrisdesign.com", rating: 4, img: "assets/olivia.jpg" }
+            { name: "John Doe", experience: "beginner", skills: "web-development", bio: "Passionate about web design and development.", portfolio: "johnportfolio.com", rating: 4, img: "assets/actor1.jpg" },
+            { name: "Jane Smith", experience: "adept", skills: "design", bio: "Creative designer with a focus on branding.", portfolio: "janesmithdesigns.com", rating: 5, img: "assets/actor2.jpg" },
+            { name: "Robert Johnson", experience: "expert", skills: "writing", bio: "Experienced technical writer with a knack for explaining complex concepts.", portfolio: "robertjohnsonwrites.com", rating: 3, img: "assets/actor3.jpg" },
+            { name: "Emily Davis", experience: "expert", skills: "web-development", bio: "Full-stack developer with expertise in React and Node.js.", portfolio: "emilydavis.dev", rating: 5, img: "assets/actor4.jpg" },
+            { name: "Michael Brown", experience: "beginner", skills: "design", bio: "Aspiring UX/UI designer looking for new challenges.", portfolio: "michaelbrown.design", rating: 2, img: "assets/actor5.jpg" },
+            { name: "Sophia Lee", experience: "adept", skills: "writing", bio: "Content writer with a focus on SEO and digital marketing.", portfolio: "sophialeewrites.com", rating: 4, img: "assets/actor6.jpg" },
+            { name: "Daniel White", experience: "expert", skills: "web-development", bio: "Senior developer specializing in JavaScript frameworks and cloud computing.", portfolio: "danielwhite.dev", rating: 5, img: "assets/actor7.jpg" },
+            { name: "Olivia Harris", experience: "adept", skills: "design", bio: "Graphic designer with a passion for creating visuals that tell stories.", portfolio: "oliviaharrisdesign.com", rating: 4, img: "assets/actor8.jpg" },
+            { name: "Liam Clark", experience: "beginner", skills: "writing", bio: "New writer exploring various niches and topics.", portfolio: "liamclarkwrites.com", rating: 3, img: "assets/actor9.jpg" },
+            { name: "Charlotte Martinez", experience: "expert", skills: "web-development", bio: "Experienced front-end developer, specializing in JavaScript and React.", portfolio: "charlottemartinez.dev", rating: 5, img: "assets/actor10.jpg" },
+            { name: "James Wilson", experience: "adept", skills: "design", bio: "Visual designer with a focus on branding and user experience.", portfolio: "jameswilson.design", rating: 4, img: "assets/actor11.jpg" },
+            { name: "Mia Taylor", experience: "beginner", skills: "writing", bio: "Freelance writer with a creative twist.", portfolio: "miataylorwrites.com", rating: 3, img: "assets/actor12.jpg" },
+            { name: "Ethan Anderson", experience: "expert", skills: "web-development", bio: "Senior software engineer with 10+ years of experience in full-stack development.", portfolio: "ethananderson.dev", rating: 5, img: "assets/actor13.jpg" },
+            { name: "Isabella Thomas", experience: "beginner", skills: "design", bio: "Emerging graphic designer with a unique creative vision.", portfolio: "isabellathomas.design", rating: 4, img: "assets/actor14.jpg" },
+            { name: "Alexander Taylor", experience: "adept", skills: "writing", bio: "Copywriter with a passion for marketing and SEO.", portfolio: "alexandertaylorwrites.com", rating: 3, img: "assets/actor15.jpg" },
+            { name: "Amelia Lee", experience: "expert", skills: "web-development", bio: "Full-stack developer, specializing in back-end technologies and database management.", portfolio: "amelialee.dev", rating: 4, img: "assets/actor16.jpg" },
+            { name: "Jack Jackson", experience: "beginner", skills: "design", bio: "A self-taught graphic designer with a passion for creating art.", portfolio: "jackjackson.design", rating: 2, img: "assets/actor17.jpg" },
+            { name: "Lucas White", experience: "adept", skills: "writing", bio: "Avid writer specializing in content creation and digital strategy.", portfolio: "lucaswhitewrites.com", rating: 4, img: "assets/actor18.jpg" },
+            { name: "Evelyn Harris", experience: "expert", skills: "web-development", bio: "Experienced web developer with a deep understanding of both front-end and back-end technologies.", portfolio: "evelynharris.dev", rating: 5, img: "assets/actor19.jpg" },
+            { name: "Logan Young", experience: "beginner", skills: "writing", bio: "Passionate writer and storyteller.", portfolio: "loganyoungwrites.com", rating: 3, img: "assets/actor20.jpg" },
+            { name: "Grace Allen", experience: "adept", skills: "design", bio: "Creative director with a focus on branding and visual communication.", portfolio: "graceallen.design", rating: 5, img: "assets/actor21.jpg" },
+            { name: "Benjamin Clark", experience: "expert", skills: "web-development", bio: "Senior software engineer with expertise in React, Node.js, and cloud architecture.", portfolio: "benjaminclark.dev", rating: 5, img: "assets/actor22.jpg" },
+            { name: "Harper Scott", experience: "adept", skills: "writing", bio: "SEO content writer specializing in blog posts and marketing copy.", portfolio: "harperscottwrites.com", rating: 4, img: "assets/actor23.jpg" },
+            { name: "Henry King", experience: "beginner", skills: "design", bio: "Up-and-coming designer with an eye for modern aesthetics.", portfolio: "henryking.design", rating: 3, img: "assets/actor24.jpg" }
         ];
 
         let currentPage = 1;
-        const talentsPerPage = 4;
+        const talentsPerPage = 8;
 
         function generateStars(rating) {
             const fullStars = Math.floor(rating);
@@ -211,7 +227,7 @@
                 talentElement.classList.add("col-md-3");
                 talentElement.innerHTML = `
                     <div class="profile-card">
-                        <img src="assets/${talent.img}" alt="${talent.name}'s Photo" class="profile-image">
+                        <img src="${talent.img}" alt="${talent.name}'s Photo" class="profile-image">
                         <h5>${talent.name}</h5>
                         <div class="stars">${generateStars(talent.rating)}</div>
                         <p><strong>Experience:</strong> ${talent.experience}</p>
