@@ -38,7 +38,7 @@
             margin-bottom: 15px;
         }
         .stars {
-            color: #f39c12;
+            color: #6a1b9a;
         }
         .filter-section {
             background: #f57f17;
@@ -94,12 +94,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="text-center text-white" style="background: url('assets/talent-hero.jpg') no-repeat center center/cover; padding: 5rem 0;">
-        <div class="container">
-            <h1 style="font-family: 'Uncial Antiqua', cursive; font-size: 3.5rem;">Find the Best Adventurers</h1>
-            <p class="lead">Discover the talent that fits your project needs.</p>
-        </div>
-    </header>
+<header class="text-center text-white position-relative" style="background: url('assets/talent-hero.jpg') no-repeat center center/cover; padding: 5rem 0;">
+    <!-- Overlay for transparency -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <!-- Content Container -->
+    <div class="container position-relative" style="z-index: 2;">
+        <h1 style="font-family: 'Uncial Antiqua', cursive; font-size: 3.5rem;">Find the Best Adventurers</h1>
+        <p class="lead">Discover the talent that fits your project needs.</p>
+    </div>
+</header>
+
 
     <!-- Filters Section -->
     <section class="container mt-4">
@@ -295,7 +300,7 @@
             filterTalent();
         });
 
-        filterTalent(); // Initial call to display all talents
+        filterTalent();
     </script>
 </body>
 </html>
