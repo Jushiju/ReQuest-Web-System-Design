@@ -95,12 +95,13 @@
                     <option value="adept">Adept</option>
                     <option value="expert">Expert</option>
                 </select>
-                <select class="form-select" id="type-filter">
+                <select class="form-select me-2" id="type-filter">
                     <option value="all">Job Type</option>
                     <option value="web-development">Web Development</option>
                     <option value="design">Design</option>
                     <option value="writing">Writing</option>
                 </select>
+                <button class="btn btn-danger" id="clear-filters">Clear Filters</button>
             </div>
         </div>
     </section>
@@ -136,20 +137,21 @@
         const rewardFilter = document.getElementById("reward-filter");
         const experienceFilter = document.getElementById("experience-filter");
         const typeFilter = document.getElementById("type-filter");
+        const clearFiltersButton = document.getElementById("clear-filters");
 
         const quests = [
-            { title: "Build a Responsive Website", reward: 500, experience: "beginner", category: "web-development" },
-            { title: "Logo Design for E-commerce", reward: 200, experience: "adept", category: "design" },
-            { title: "Translate a Novel", reward: 800, experience: "expert", category: "writing" },
-            { title: "Develop a Custom CMS", reward: 1000, experience: "expert", category: "web-development" },
-            { title: "Write Blog Articles", reward: 300, experience: "beginner", category: "writing" },
-            { title: "Create a 3D Product Render", reward: 1500, experience: "expert", category: "design" },
-            { title: "Fix Website Bugs", reward: 400, experience: "adept", category: "web-development" },
-            { title: "Technical Manual Writing", reward: 700, experience: "adept", category: "writing" },
-            { title: "Social Media Graphics", reward: 600, experience: "beginner", category: "design" },
-            { title: "Ghostwriting a Non-fiction Book", reward: 900, experience: "expert", category: "writing" },
-            { title: "Design a Business Card", reward: 450, experience: "adept", category: "design" },
-            { title: "WordPress Theme Customization", reward: 550, experience: "beginner", category: "web-development" },
+            { title: "Build a Responsive Website", reward: 500, experience: "beginner", category: "web-development", description: "Build a fully responsive website for a client.", skills: "HTML, CSS, JavaScript" },
+            { title: "Logo Design for E-commerce", reward: 200, experience: "adept", category: "design", description: "Design a modern logo for an e-commerce brand.", skills: "Illustrator, Photoshop" },
+            { title: "Translate a Novel", reward: 800, experience: "expert", category: "writing", description: "Translate a full novel from English to Spanish.", skills: "Fluent in English and Spanish" },
+            { title: "Develop a Custom CMS", reward: 1000, experience: "expert", category: "web-development", description: "Create a custom content management system for a client.", skills: "PHP, MySQL, JavaScript" },
+            { title: "Write Blog Articles", reward: 300, experience: "beginner", category: "writing", description: "Write a set of engaging blog posts for a tech blog.", skills: "SEO, Writing" },
+            { title: "Create a 3D Product Render", reward: 1500, experience: "expert", category: "design", description: "Create realistic 3D product renders for an e-commerce brand.", skills: "Blender, 3ds Max" },
+            { title: "Fix Website Bugs", reward: 400, experience: "adept", category: "web-development", description: "Fix bugs and issues in a WordPress website.", skills: "WordPress, PHP" },
+            { title: "Technical Manual Writing", reward: 700, experience: "adept", category: "writing", description: "Write a detailed technical manual for a software product.", skills: "Technical Writing" },
+            { title: "Social Media Graphics", reward: 600, experience: "beginner", category: "design", description: "Design social media graphics for a small business.", skills: "Canva, Photoshop" },
+            { title: "Ghostwriting a Non-fiction Book", reward: 900, experience: "expert", category: "writing", description: "Ghostwrite a non-fiction book about health and wellness.", skills: "Writing, Research" },
+            { title: "Design a Business Card", reward: 450, experience: "adept", category: "design", description: "Design a professional business card for a client.", skills: "Illustrator, Photoshop" },
+            { title: "WordPress Theme Customization", reward: 550, experience: "beginner", category: "web-development", description: "Customize a WordPress theme for a blog.", skills: "WordPress, CSS" },
         ];
 
         let currentPage = 1;
@@ -187,9 +189,11 @@
                 questElement.innerHTML = `
                     <div class="quest-card">
                         <h5>${quest.title}</h5>
-                        <p>Reward: $${quest.reward}</p>
-                        <p>Experience Level: ${quest.experience}</p>
-                        <p>Category: ${quest.category}</p>
+                        <p><strong>Reward:</strong> $${quest.reward}</p>
+                        <p><strong>Experience Level:</strong> ${quest.experience}</p>
+                        <p><strong>Category:</strong> ${quest.category}</p>
+                        <p><strong>Description:</strong> ${quest.description}</p>
+                        <p><strong>Skills Required:</strong> ${quest.skills}</p>
                         <button class="btn">Apply</button>
                     </div>
                 `;
@@ -220,6 +224,13 @@
         rewardFilter.addEventListener("change", filterQuests);
         experienceFilter.addEventListener("change", filterQuests);
         typeFilter.addEventListener("change", filterQuests);
+        clearFiltersButton.addEventListener("click", () => {
+            searchInput.value = '';
+            rewardFilter.value = 'all';
+            experienceFilter.value = 'all';
+            typeFilter.value = 'all';
+            filterQuests();
+        });
 
         filterQuests();
     </script>
