@@ -38,6 +38,20 @@
         .search-input {
             border-radius: 20px;
             padding: 10px;
+            width: 60%;
+        }
+        .search-btn {
+            border-radius: 50%;
+            padding: 10px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+        }
+        .clear-filters {
+            background-color: #6a1b9a;
+            color: white;
+            border-radius: 20px;
+            padding: 10px 15px;
         }
         .pagination {
             display: inline-block;
@@ -80,8 +94,8 @@
     <section class="container mt-4">
         <div class="filter-section d-flex justify-content-between align-items-center">
             <div class="d-flex">
-                <input type="text" id="search-bar" class="form-control search-input w-50" placeholder="Search Quests...">
-                <button class="btn btn-light" id="search-btn"><i class="bi bi-search"></i></button>
+                <input type="text" id="search-bar" class="form-control search-input" placeholder="Search Quests...">
+                <button class="btn search-btn" id="search-btn"><i class="bi bi-search"></i></button>
             </div>
             <div class="d-flex">
                 <select class="form-select me-2" id="reward-filter">
@@ -101,7 +115,7 @@
                     <option value="design">Design</option>
                     <option value="writing">Writing</option>
                 </select>
-                <button class="btn btn-danger" id="clear-filters">Clear Filters</button>
+                <button class="btn clear-filters" id="clear-filters">Clear Filters</button>
             </div>
         </div>
     </section>
@@ -148,10 +162,33 @@
             { title: "Create a 3D Product Render", reward: 1500, experience: "expert", category: "design", description: "Create realistic 3D product renders for an e-commerce brand.", skills: "Blender, 3ds Max" },
             { title: "Fix Website Bugs", reward: 400, experience: "adept", category: "web-development", description: "Fix bugs and issues in a WordPress website.", skills: "WordPress, PHP" },
             { title: "Technical Manual Writing", reward: 700, experience: "adept", category: "writing", description: "Write a detailed technical manual for a software product.", skills: "Technical Writing" },
-            { title: "Social Media Graphics", reward: 600, experience: "beginner", category: "design", description: "Design social media graphics for a small business.", skills: "Canva, Photoshop" },
-            { title: "Ghostwriting a Non-fiction Book", reward: 900, experience: "expert", category: "writing", description: "Ghostwrite a non-fiction book about health and wellness.", skills: "Writing, Research" },
-            { title: "Design a Business Card", reward: 450, experience: "adept", category: "design", description: "Design a professional business card for a client.", skills: "Illustrator, Photoshop" },
+            { title: "UX/UI Design for App", reward: 600, experience: "expert", category: "design", description: "Design user interface and experience for a mobile app.", skills: "Figma, Adobe XD" },
+            { title: "Edit Video for YouTube Channel", reward: 350, experience: "beginner", category: "design", description: "Edit a 5-minute video for a YouTube channel.", skills: "Premiere Pro, After Effects" },
+            { title: "Create a Marketing Strategy", reward: 900, experience: "expert", category: "writing", description: "Develop a full marketing strategy for a brand.", skills: "Marketing, Strategy" },
             { title: "WordPress Theme Customization", reward: 550, experience: "beginner", category: "web-development", description: "Customize a WordPress theme for a blog.", skills: "WordPress, CSS" },
+            { title: "Build an E-commerce Website", reward: 1200, experience: "expert", category: "web-development", description: "Create a full-fledged e-commerce website.", skills: "Shopify, WooCommerce, HTML, CSS" },
+            { title: "Develop a Mobile App", reward: 2000, experience: "expert", category: "web-development", description: "Develop a mobile app for a startup.", skills: "React Native, Firebase" },
+            { title: "Create Marketing Collateral", reward: 250, experience: "adept", category: "design", description: "Create flyers, brochures, and banners for a marketing campaign.", skills: "Illustrator, Photoshop" },
+            { title: "SEO Content Writing", reward: 350, experience: "beginner", category: "writing", description: "Write SEO-friendly content for websites.", skills: "SEO, Writing" },
+            { title: "Social Media Graphics", reward: 450, experience: "adept", category: "design", description: "Design social media posts and banners.", skills: "Photoshop, Illustrator" },
+            { title: "Create an Animated Explainer Video", reward: 1000, experience: "expert", category: "design", description: "Produce an animated explainer video for a product.", skills: "After Effects, Animation" },
+            { title: "Develop a Mobile Game", reward: 5000, experience: "expert", category: "web-development", description: "Build a simple mobile game for Android and iOS.", skills: "Unity, C#" },
+            { title: "Translate Marketing Copy", reward: 600, experience: "adept", category: "writing", description: "Translate marketing copy for a global brand.", skills: "English, Spanish" },
+            { title: "Write a Research Paper", reward: 1500, experience: "expert", category: "writing", description: "Write a 10,000-word research paper on AI in healthcare.", skills: "Research, Writing" },
+            { title: "Create a Branding Kit", reward: 800, experience: "adept", category: "design", description: "Design a branding kit including logos, fonts, and color palette.", skills: "Illustrator, Photoshop" },
+            { title: "Create a Video Animation", reward: 1100, experience: "expert", category: "design", description: "Create a video animation for a marketing campaign.", skills: "After Effects, Animation" },
+            { title: "Website Security Audit", reward: 950, experience: "expert", category: "web-development", description: "Audit a website for security vulnerabilities.", skills: "Cybersecurity, PHP, JavaScript" },
+            { title: "Mobile App UX Design", reward: 550, experience: "beginner", category: "design", description: "Create a user experience design for a mobile app.", skills: "Figma, Sketch" },
+            { title: "Brand Strategy Consultation", reward: 1200, experience: "expert", category: "writing", description: "Consult a startup to develop a brand strategy.", skills: "Marketing, Strategy" },
+            { title: "Create Infographics", reward: 400, experience: "beginner", category: "design", description: "Design infographics for a business presentation.", skills: "Illustrator, Canva" },
+            { title: "WordPress Plugin Development", reward: 1500, experience: "expert", category: "web-development", description: "Develop a custom WordPress plugin for a website.", skills: "PHP, WordPress" },
+            { title: "Logo Redesign for Brand", reward: 350, experience: "beginner", category: "design", description: "Redesign a logo for an existing brand.", skills: "Illustrator, Photoshop" },
+            { title: "Create eBook Design", reward: 750, experience: "adept", category: "design", description: "Design an eBook for a client.", skills: "InDesign, Photoshop" },
+            { title: "Web App Development", reward: 2000, experience: "expert", category: "web-development", description: "Develop a custom web app for a company.", skills: "React, Node.js" },
+            { title: "Video Editing for Product Launch", reward: 650, experience: "adept", category: "design", description: "Edit a promotional video for a product launch.", skills: "Premiere Pro, After Effects" },
+            { title: "Write Product Descriptions", reward: 400, experience: "beginner", category: "writing", description: "Write compelling product descriptions for an online store.", skills: "Copywriting" },
+            { title: "Create a YouTube Channel Logo", reward: 250, experience: "beginner", category: "design", description: "Design a YouTube channel logo for a vlogger.", skills: "Illustrator, Photoshop" },
+            { title: "Mobile App Testing", reward: 700, experience: "adept", category: "web-development", description: "Test a mobile app for bugs and usability.", skills: "Mobile App Testing" }
         ];
 
         let currentPage = 1;
@@ -194,7 +231,7 @@
                         <p><strong>Category:</strong> ${quest.category}</p>
                         <p><strong>Description:</strong> ${quest.description}</p>
                         <p><strong>Skills Required:</strong> ${quest.skills}</p>
-                        <button class="btn">Apply</button>
+                        <a href="dashboard.html" class="btn">Apply</a>
                     </div>
                 `;
                 questCards.appendChild(questElement);
