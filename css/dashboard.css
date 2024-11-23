@@ -1,0 +1,30 @@
+body {
+  font-family: 'Uncial Antiqua', cursive;
+  background: linear-gradient(to bottom, #1c1c2b, #000);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  color: #ffcc00;
+}
+
+header {
+  text-align: center;
+  padding: 50px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ffcc00;
+}

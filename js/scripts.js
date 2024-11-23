@@ -63,3 +63,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+// Fog Movement Animation
+const fog = document.querySelector('.fog');
+
+let fogPosition = 0;
+function animateFog() {
+    fogPosition -= 0.1;
+    fog.style.transform = `translateX(${fogPosition}px)`;
+    requestAnimationFrame(animateFog);
+}
+
+animateFog();
