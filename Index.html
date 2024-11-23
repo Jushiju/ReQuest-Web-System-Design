@@ -9,15 +9,17 @@
 </head>
 <body>
     <header>
-        <h1>ReQuest</h1>
-        <p><i class="fas fa-scroll"></i> The Quest for Freelance Work Begins</p>
+        <div class="logo">
+            <h1>ReQuest</h1>
+            <p><i class="fas fa-scroll"></i> The Quest for Freelance Work Begins</p>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#quests"><i class="fas fa-list"></i> Quest Board</a></li>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-                <li><a href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -31,39 +33,20 @@
 
         <section id="quests">
             <h2><i class="fas fa-list-alt"></i> Quest Board</h2>
-            <div class="quest-navigation">
-                <button class="nav-button" id="prev-quest"><i class="fas fa-arrow-left"></i></button>
-                <button class="nav-button" id="next-quest"><i class="fas fa-arrow-right"></i></button>
+            <div class="quest-board" id="job-list">
+                <!-- Job items will be dynamically added here -->
             </div>
-            <div class="quest-board">
-                <!-- Quests will be dynamically loaded here -->
-            </div>
-        </section>
+            <h3><i class="fas fa-plus"></i> Submit a Quest</h3>
+            <form id="quest-form">
+                <label for="quest-title">Quest Title:</label>
+                <input type="text" id="quest-title" required>
 
-        <section id="about">
-            <h2><i class="fas fa-info-circle"></i> About Us</h2>
-            <p>Welcome to ReQuest, the ultimate platform for freelancers and clients. We bridge the gap between those looking for creative talents and those in need of exciting projects. Join our community and embark on your freelance journey today!</p>
-        </section>
+                <label for="quest-description">Description:</label>
+                <textarea id="quest-description" required></textarea>
 
-        <section id="testimonials">
-            <h2><i class="fas fa-comments"></i> Testimonials</h2>
-            <div class="testimonial-container">
-                <p>"ReQuest has transformed the way I find work. I love the variety of quests available!" - A Happy Freelancer</p>
-                <p>"The quality of freelancers I have found on ReQuest is outstanding." - A Satisfied Client</p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2><i class="fas fa-envelope"></i> Contact Us</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                <button type="submit" class="apply-button"><i class="fas fa-check"></i> Add Quest</button>
             </form>
         </section>
-
-        <button id="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i></button>
     </main>
 
     <footer>

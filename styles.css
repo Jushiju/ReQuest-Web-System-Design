@@ -1,171 +1,69 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Arial', sans-serif;
-    background: #1C1C1C;
-    color: #FAFAFA;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
 }
 
 header {
-    background: #B22222;
-    color: #FAFAFA;
+    background-color: #3c3f41;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
+    gap: 20px;
 }
 
 nav a {
-    color: #FAFAFA;
+    color: #ffffff;
     text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
+main {
+    padding: 20px;
 }
 
 #hero {
-    background: url('images/images-1.jpg') no-repeat center center/cover;
-    padding: 50px;
+    background-color: #4b8b3b;
+    color: #ffffff;
+    padding: 40px;
     text-align: center;
-    border-radius: 10px;
-    margin: 20px auto;
-    color: #FAFAFA;
-}
-
-#quests {
-    background: url('images/images-2.jpg') no-repeat center center/cover;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    color: #FAFAFA;
-}
-
-.quest-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.nav-button {
-    background: #B22222;
-    color: #FAFAFA;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
 }
 
 .quest-board {
-    display: flex;
-    flex-direction: column;
+    margin-top: 20px;
 }
 
 .quest {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    margin: 15px 0;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
-    transition: transform 0.2s;
-}
-
-.quest:hover {
-    transform: scale(1.02);
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
 .apply-button {
-    background: #B22222;
-    color: #FAFAFA;
-    padding: 8px 16px;
+    background-color: #3c3f41;
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    padding: 10px;
     cursor: pointer;
-}
-
-.apply-button:hover {
-    background: #A61C1C;
 }
 
 footer {
     text-align: center;
-    background-color: #B22222;
-    color: #FAFAFA;
-    padding: 10px;
-}
-
-#about {
-    background: url('images/images-3.jpg') no-repeat center center/cover;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    color: #FAFAFA;
-}
-
-#testimonials {
-    background: url('images/images-4.jpg') no-repeat center center/cover;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    color: #FAFAFA;
-}
-
-#contact {
-    background: url('images/images-5.jpg') no-repeat center center/cover;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    color: #FAFAFA;
-}
-
-#contact-form input, #contact-form textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #B22222;
-    border-radius: 4px;
-}
-
-#contact-form button {
-    background: #B22222;
-    color: #FAFAFA;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#contact-form button:hover {
-    background: #A61C1C;
-}
-
-#back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #B22222;
-    color: #FAFAFA;
-    border: none;
-    border-radius: 50%;
-    padding: 10px 15px;
-    display: none;
-    cursor: pointer;
-}
-
-#back-to-top:hover {
-    background: #A61C1C;
+    padding: 10px 0;
+    background-color: #3c3f41;
+    color: #ffffff;
 }
