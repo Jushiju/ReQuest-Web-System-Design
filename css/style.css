@@ -52,6 +52,13 @@ header .btn {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Advertisement image */
+.advertisement-img {
+  width: 100%;  /* Adjust width to fit container */
+  max-width: 300px; /* Set a maximum size to make the image smaller */
+  height: auto;  /* Maintain aspect ratio */
+}
+
 /* Footer */
 footer {
   font-family: 'Uncial Antiqua', cursive;
