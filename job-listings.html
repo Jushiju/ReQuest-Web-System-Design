@@ -130,11 +130,12 @@
     <!-- Pagination -->
     <section class="container my-4 text-center">
         <nav>
-            <ul class="pagination justify-content-center" id="pagination">
+            <ul class="pagination justify-content-center d-flex" id="pagination">
                 <!-- Pagination links will be generated here -->
             </ul>
         </nav>
     </section>
+    
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
@@ -192,7 +193,7 @@
         ];
 
         let currentPage = 1;
-        const questsPerPage = 12;
+        const questsPerPage = 9;
 
         function filterQuests() {
             const searchQuery = searchInput.value.toLowerCase();
@@ -241,20 +242,49 @@
         }
 
         function generatePagination(totalQuests) {
-            const totalPages = Math.ceil(totalQuests / questsPerPage);
-            pagination.innerHTML = "";
-            
-            for (let i = 1; i <= totalPages; i++) {
-                const pageItem = document.createElement("li");
-                pageItem.classList.add("page-item");
-                pageItem.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-                pageItem.addEventListener("click", () => {
-                    currentPage = i;
-                    filterQuests();
-                });
-                pagination.appendChild(pageItem);
-            }
+    const totalPages = Math.ceil(totalQuests / questsPerPage);
+    pagination.innerHTML = "";
+
+    // Previous Button
+    const prevItem = document.createElement("li");
+    prevItem.classList.add("page-item");
+    if (currentPage === 1) prevItem.classList.add("disabled");
+    prevItem.innerHTML = `<a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>`;
+    prevItem.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            filterQuests();
         }
+    });
+    pagination.appendChild(prevItem);
+
+    // Page Numbers
+    for (let i = 1; i <= totalPages; i++) {
+        const pageItem = document.createElement("li");
+        pageItem.classList.add("page-item");
+        if (i === currentPage) pageItem.classList.add("active");
+        pageItem.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+        pageItem.addEventListener("click", () => {
+            currentPage = i;
+            filterQuests();
+        });
+        pagination.appendChild(pageItem);
+    }
+
+    // Next Button
+    const nextItem = document.createElement("li");
+    nextItem.classList.add("page-item");
+    if (currentPage === totalPages) nextItem.classList.add("disabled");
+    nextItem.innerHTML = `<a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>`;
+    nextItem.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            filterQuests();
+        }
+    });
+    pagination.appendChild(nextItem);
+}
+
 
         searchButton.addEventListener("click", filterQuests);
         searchInput.addEventListener("keyup", filterQuests);
@@ -271,5 +301,6 @@
 
         filterQuests();
     </script><script src="js/scripts.js"></script>
+    
 </body>
 </html>

@@ -142,3 +142,72 @@ footer a:hover {
 .custom-nav-link:hover {
   color: #f1c40f; 
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination .page-item {
+  display: inline;
+}
+
+.pagination .page-link {
+  border: 1px solid #6a1b9a;
+  color: #6a1b9a;
+  border-radius: 20px;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+.pagination .page-link:hover {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+.pagination .page-link {
+  color: #6a1b9a; /* Purple theme */
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #6a1b9a;
+  border-color: #6a1b9a;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #ccc; /* Light gray for disabled */
+}
+.pagination {
+  display: flex;
+  justify-content: center; /* Centers the pagination items */
+  gap: 10px; /* Adds space between items */
+}
+
+.pagination .page-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination .page-link {
+  border-radius: 50%; /* Rounded pagination links */
+  background-color: #fff; /* White background for buttons */
+  color: #6a1b9a; /* Purple color */
+  border: 1px solid #6a1b9a; /* Border for buttons */
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #6a1b9a;
+  color: #fff; /* White text on active page */
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #ccc; /* Light gray color for disabled pages */
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #6a1b9a; /* Hover effect */
+  color: white;
+}
