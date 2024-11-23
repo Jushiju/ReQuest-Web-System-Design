@@ -74,3 +74,85 @@ function animateFog() {
 }
 
 animateFog();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const logoutBtn = document.getElementById('logout-btn');
+    const navbar = document.querySelector('nav');
+    const loginStateKey = 'isLoggedIn';
+
+    // Smooth Page Transitions
+    document.body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+
+    // Load Dark Mode State
+    const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
+    if (isDarkMode) document.body.classList.add('dark-mode');
+
+    // Dark Mode Toggle
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const icon = darkModeToggle.querySelector('i');
+        icon.classList.toggle('bi-moon');
+        icon.classList.toggle('bi-sun');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Set Initial Dark Mode Icon
+    const icon = document.createElement('i');
+    icon.classList.add('bi', isDarkMode ? 'bi-sun' : 'bi-moon');
+    darkModeToggle.appendChild(icon);
+
+    // Handle Login/Logout State
+    const isLoggedIn = JSON.parse(localStorage.getItem(loginStateKey)) || false;
+    if (isLoggedIn) {
+        logoutBtn.textContent = 'Log Out';
+        logoutBtn.addEventListener('click', () => {
+            localStorage.setItem(loginStateKey, false);
+            alert('Logged out successfully.');
+            window.location.href = 'login.html';
+        });
+    } else {
+        logoutBtn.textContent = 'Login';
+        logoutBtn.addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const logoutBtn = document.getElementById('logout-btn');
+    const loginStateKey = 'isLoggedIn';
+
+    // Set Initial Login State
+    const isLoggedIn = JSON.parse(localStorage.getItem(loginStateKey)) || false;
+
+    // Update Login/Logout Button
+    function updateLoginState() {
+        if (isLoggedIn) {
+            logoutBtn.textContent = 'Log Out';
+            logoutBtn.classList.add('btn-danger');
+            logoutBtn.classList.remove('btn-primary');
+            logoutBtn.addEventListener('click', () => {
+                localStorage.setItem(loginStateKey, false);
+                alert('Logged out successfully.');
+                window.location.href = 'login.html';
+            });
+        } else {
+            logoutBtn.textContent = 'Login';
+            logoutBtn.classList.add('btn-primary');
+            logoutBtn.classList.remove('btn-danger');
+            logoutBtn.addEventListener('click', () => {
+                window.location.href = 'login.html';
+            });
+        }
+    }
+    updateLoginState();
+
+    // Dark Mode Toggle
+    const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
+    if (isDarkMode) document.body.classList.add('dark-mode');
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+});

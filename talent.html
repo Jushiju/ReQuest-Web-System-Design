@@ -72,26 +72,35 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/logo.png" alt="ReQuest Logo" style="height: 50px;">
-                <span style="font-family: 'Uncial Antiqua', cursive; font-size: 1.5rem; color: #fff;">ReQuest</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="job-listings.html">Quests</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="talent.html">Find Talent</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/logo.png" alt="ReQuest Logo" style="height: 50px;"> ReQuest
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="job-listings.html">Quests</a></li>
+                <li class="nav-item"><a class="nav-link" href="talent.html">Adventurers</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+
+                <li class="nav-item">
+                    <button class="btn btn-outline-light mx-2 d-flex align-items-center" id="dark-mode-toggle">
+                        <i class="bi bi-moon"></i>
+                    </button>
+                </li>
+
+                <!-- Login/Logout Button -->
+                <li class="nav-item">
+                    <button class="btn btn-primary" id="logout-btn">Login</button>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
 <header class="text-center text-white position-relative" style="background: url('assets/talent-hero.jpg') no-repeat center center/cover; padding: 5rem 0;">
@@ -160,7 +169,7 @@
                     <h4 style="font-family: 'Uncial Antiqua', cursive;">Quick Links</h4>
                     <ul class="list-unstyled">
                         <li><a href="job-listings.html" style="color: #fff;">Quests</a></li>
-                        <li><a href="profile.html" style="color: #fff;">Adventurers</a></li>
+                        <li><a href="dashboard.html" style="color: #fff;">Adventurers</a></li>
                         <li><a href="login.html" style="color: #fff;">Login</a></li>
                         <li><a href="contact.html" style="color: #fff;">Contact Us</a></li>
                         <li><a href="privacy-policy.html" style="color: #fff;">Privacy Policy</a></li>
@@ -356,6 +365,7 @@
         });
 
         filterTalent();
+        
     </script>
 </body>
 </html>
