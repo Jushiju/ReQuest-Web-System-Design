@@ -13,54 +13,57 @@
     <!-- Google Font for Fantasy Style -->
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
             background: linear-gradient(to bottom, #1c1c2b, #000) no-repeat;
             color: #fff;
             font-family: 'Uncial Antiqua', cursive;
+            overflow-x: hidden;
         }
 
-        /* Section Header Styling */
+        /* Section Headers */
         .section-header {
             font-size: 2.5rem;
-            color: rgb(255, 254, 254);
+            color: #ffcc00;
             margin-bottom: 30px;
             text-align: center;
+            text-shadow: 0 0 15px #ff5722;
         }
 
-        /* About Section Cards */
+        /* Cards */
         .about-card {
-            background: linear-gradient(135deg, #0b4e04, #45a04c);
+            background: linear-gradient(135deg, #e59f1e, #1565c0);
             color: white;
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        /* Button Styling */
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+        }
+
+        /* Button Effects */
         .btn-custom {
             background-color: #ffcc00;
             color: black;
             font-weight: bold;
             border: none;
             border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .btn-custom:hover {
-            background-color: #a88f87;
+            background-color: #a17b70;
             color: white;
-        }
-
-        /* Image Section */
-        .about-image {
-            border-radius: 15px;
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            transform: scale(1.1);
         }
 
         /* Parallax Section */
         .parallax {
-            background: url('assets/hero-image.jpg') no-repeat center center/cover;
+            background: url('assets/abouthero-image.png') no-repeat center center/cover;
             height: 300px;
             position: relative;
         }
@@ -72,6 +75,44 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Key Facts Section */
+        .key-facts {
+            background: linear-gradient(135deg, #e59f1e, #1565c0);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+        }
+
+        .key-facts h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+
+        .fact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .fact-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+            color: #ffcc00;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #ffcc00;
+            }
+            to {
+                text-shadow: 0 0 15px #ff5722;
+            }
         }
     </style>
 </head>
@@ -109,8 +150,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="about-card">
-                    <h2>Our Vision</h2>
-                    <p>ReQuest is more than just a freelance platform—it's an adventure where creativity meets collaboration. Founded by Joaquin Lorenzo G. Aguilar, ReQuest immerses freelancers and clients in a world inspired by Fantasy and RPGs, transforming projects into epic quests.</p>
+                    <h2>Our Mission</h2>
+                    <p>At ReQuest, we believe in transforming work into an adventure. By blending the thrill of Fantasy and RPGs with modern freelancing, we empower individuals to connect and collaborate like never before.</p>
                 </div>
             </div>
             <div class="col-md-6 text-center">
@@ -118,6 +159,18 @@
             </div>
         </div>
     </section>
+
+<section class="container py-5">
+    <h2 class="section-header">Our Vision</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="about-card">
+                <p>ReQuest envisions a world where every project is an epic journey, and every collaborator is a hero. 
+                   We strive to create a realm where creativity and collaboration flourish, leaving a legacy of success, adventure, and fulfillment.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Meet the Founder -->
     <section class="container py-5">
@@ -134,17 +187,113 @@
         </div>
     </section>
 
+    <!-- Key Facts Section -->
+    <section class="container py-5">
+        <h2 class="section-header">Key Facts About ReQuest</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="key-facts">
+                    <h3>What Makes Us Unique?</h3>
+                    <div class="fact">
+                        <i class="bi bi-stars fact-icon"></i>
+                        <p>Over <strong>10,000 adventurers</strong> signed up worldwide.</p>
+                    </div>
+                    <div class="fact">
+                        <i class="bi bi-globe fact-icon"></i>
+                        <p>Projects completed in <strong>50+ countries</strong>.</p>
+                    </div>
+                    <div class="fact">
+                        <i class="bi bi-emoji-sunglasses fact-icon"></i>
+                        <p>A customer satisfaction rating of <strong>95%</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="key-facts">
+                    <h3>What We Offer</h3>
+                    <div class="fact">
+                        <i class="bi bi-controller fact-icon"></i>
+                        <p>Gamified experience for freelancers and clients.</p>
+                    </div>
+                    <div class="fact">
+                        <i class="bi bi-shield-check fact-icon"></i>
+                        <p>Secure payments and trustworthy partnerships.</p>
+                    </div>
+                    <div class="fact">
+                        <i class="bi bi-lightning-charge fact-icon"></i>
+                        <p>Quick and reliable talent matching.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Action -->
     <section class="text-center py-5" style="background: #1e1e2e;">
         <h2 class="section-header">Embark on Your Quest Today</h2>
-        <p>Join our platform and discover the perfect partner for your project. From humble beginnings to epic achievements, your journey starts here.</p>
+        <p>Join ReQuest and connect with skilled adventurers ready to bring your vision to life. The journey starts with a single click!</p>
         <a href="signup.html" class="btn btn-custom btn-lg">Start Your Adventure</a>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <p>&copy; 2024 ReQuest. Embark on Your Next Adventure!</p>
+    <!-- Enhanced Footer -->
+    <footer class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 style="font-family: 'Uncial Antiqua', cursive;">About ReQuest</h4>
+                    <p>ReQuest is your gateway to a world of epic quests and legendary adventurers. Whether you need a powerful warrior, a wise mage, or a skilled artisan, we connect you with the best talent from all realms.</p>
+                    <p><strong>Contact Us:</strong><br>Email: <a href="mailto:contact@request.com" style="color: #fff;">contact@request.com</a><br>Phone: +123-456-7890</p>
+                </div>
+                <div class="col-md-6">
+                    <h4 style="font-family: 'Uncial Antiqua', cursive;">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="job-listings.html" style="color: #fff;">Quests</a></li>
+                        <li><a href="profile.html" style="color: #fff;">Adventurers</a></li>
+                        <li><a href="login.html" style="color: #fff;">Login</a></li>
+                        <li><a href="contact.html" style="color: #fff;">Contact Us</a></li>
+                        <li><a href="privacy-policy.html" style="color: #fff;">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" style="color: #fff;">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-top: 1px solid #fff;">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 style="font-family: 'Uncial Antiqua', cursive;">About</h4>
+                    <ul class="list-unstyled" style="font-weight: normal;">
+                        <li><a href="about.html" style="color: #fff;">About Us</a></li>
+                        <li><a href="faq.html" style="color: #fff;">FAQs</a></li>
+                        <li><a href="contact.html" style="color: #fff;">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 style="font-family: 'Uncial Antiqua', cursive;">Company</h4>
+                    <ul class="list-unstyled" style="font-weight: normal;">
+                        <li><a href="blog.html" style="color: #fff;">Blog</a></li>
+                        <li><a href="community.html" style="color: #fff;">Community</a></li>
+                        <li><a href="help-center.html" style="color: #fff;">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-top: 1px solid #fff;">
+            <div class="d-flex justify-content-center mb-3">
+                <a href="#" class="text-white me-3">
+                    <img src="assets/facebook-logo.png" alt="Facebook" style="height: 40px;">
+                </a>
+                <a href="#" class="text-white me-3">
+                    <img src="assets/twitter-logo.png" alt="Twitter" style="height: 40px;">
+                </a>
+                <a href="#" class="text-white me-3">
+                    <img src="assets/instagram-logo.png" alt="Instagram" style="height: 40px;">
+                </a>
+                <a href="#" class="text-white">
+                    <img src="assets/linkedin-logo.png" alt="LinkedIn" style="height: 40px;">
+                </a>
+            </div>
+            <p style="font-family: 'Uncial Antiqua', cursive;">&copy; 2024 ReQuest. Embark on Your Next Adventure!</p>
+        </div>
     </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
