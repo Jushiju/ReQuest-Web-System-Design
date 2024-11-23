@@ -156,3 +156,27 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const loginBtn = document.getElementById("login-btn");
+
+    // Check if the user is logged in (using localStorage for this example)
+    if (localStorage.getItem("isLoggedIn") === "true") {
+        // If the user is logged in, show 'Logout' button
+        loginBtn.textContent = "Logout";
+    } else {
+        // If not logged in, show 'Login' button
+        loginBtn.textContent = "Login";
+    }
+
+    // Add click event listener for login/logout functionality
+    loginBtn.addEventListener("click", function() {
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            // If logged in, logout the user
+            localStorage.removeItem("isLoggedIn");
+            loginBtn.textContent = "Login"; // Change button to Login
+        } else {
+            // If not logged in, redirect to login page
+            window.location.href = "login.html";
+        }
+    });
+});
