@@ -3,23 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutBtn = document.getElementById('logout-btn');
     const profileForm = document.getElementById('profile-form');
 
-    // Load Dark Mode State
     const isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
     if (isDarkMode) document.body.classList.add('dark-mode');
 
-    // Dark Mode Toggle
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
 
-    // Log Out
     logoutBtn.addEventListener('click', () => {
         alert('You have logged out.');
         window.location.href = 'login.html';
     });
 
-    // Load Profile
     const profileData = JSON.parse(localStorage.getItem('profile')) || {
         name: 'John Doe',
         role: 'Freelancer',
@@ -29,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('profile-role').textContent = profileData.role;
     document.getElementById('profile-image').src = profileData.image;
 
-    // Save Profile
     profileForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('profile-name-input').value || profileData.name;

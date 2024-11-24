@@ -1,6 +1,4 @@
-// auth.js
 
-// Helper Functions
 function getUsers() {
     return JSON.parse(localStorage.getItem('users')) || [];
 }
@@ -17,7 +15,6 @@ function saveCurrentUser(user) {
     localStorage.setItem('loggedInUser', JSON.stringify(user));
 }
 
-// Signup Handler
 function handleSignUp(event) {
     event.preventDefault();
     const email = document.getElementById('signup-email').value;
@@ -35,7 +32,6 @@ function handleSignUp(event) {
     window.location.href = 'login.html';
 }
 
-// Login Handler
 function handleLogin(event) {
     event.preventDefault();
     const email = document.getElementById('login-email').value;
@@ -53,7 +49,6 @@ function handleLogin(event) {
     }
 }
 
-// Dashboard Loader
 function loadDashboard() {
     const user = getCurrentUser();
     if (!user) {
@@ -64,7 +59,6 @@ function loadDashboard() {
     document.getElementById('user-email').innerText = user.email;
 }
 
-// Logout Handler
 function handleLogout() {
     localStorage.removeItem('loggedInUser');
     window.location.href = 'login.html';
