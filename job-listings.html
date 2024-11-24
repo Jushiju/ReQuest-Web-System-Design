@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReQuest - Browse Quests</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Font for Fantasy Style -->
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <style>
         body {
@@ -60,7 +57,6 @@
     </style>
 </head>
 <body>
- <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -82,7 +78,6 @@
                     </button>
                 </li>
 
-                <!-- Login/Logout Button -->
                 <li class="nav-item">
                     <button class="btn btn-primary" id="logout-btn">Login</button>
                 </li>
@@ -91,7 +86,6 @@
     </div>
 </nav>
 
-    <!-- Hero Section -->
     <header class="text-center text-white" style="background: url('assets/job-hero.jpg') no-repeat center center/cover; padding: 5rem 0;">
         <div class="container">
             <h1 style="font-family: 'Uncial Antiqua', cursive; font-size: 3.5rem;">Explore Quests</h1>
@@ -99,7 +93,6 @@
         </div>
     </header>
 
-    <!-- Filters Section -->
     <section class="container mt-4">
         <div class="filter-section d-flex justify-content-between align-items-center">
             <div class="d-flex">
@@ -129,24 +122,19 @@
         </div>
     </section>
 
-    <!-- Job Listings -->
     <section class="container my-5" id="job-list">
         <div class="row gy-4" id="quest-cards">
-            <!-- Quest Cards will be dynamically inserted here -->
         </div>
     </section>
 
-    <!-- Pagination -->
     <section class="container my-4 text-center">
         <nav>
             <ul class="pagination justify-content-center d-flex" id="pagination">
-                <!-- Pagination links will be generated here -->
             </ul>
         </nav>
     </section>
     
 
-    <!-- Enhanced Footer -->
     <footer class="bg-dark text-white text-center py-5">
         <div class="container">
             <div class="row">
@@ -206,7 +194,6 @@
     </footer>
 
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const questCards = document.querySelector("#quest-cards");
@@ -309,7 +296,6 @@
     const totalPages = Math.ceil(totalQuests / questsPerPage);
     pagination.innerHTML = "";
 
-    // Previous Button
     const prevItem = document.createElement("li");
     prevItem.classList.add("page-item");
     if (currentPage === 1) prevItem.classList.add("disabled");
@@ -322,7 +308,6 @@
     });
     pagination.appendChild(prevItem);
 
-    // Page Numbers
     for (let i = 1; i <= totalPages; i++) {
         const pageItem = document.createElement("li");
         pageItem.classList.add("page-item");
@@ -335,7 +320,6 @@
         pagination.appendChild(pageItem);
     }
 
-    // Next Button
     const nextItem = document.createElement("li");
     nextItem.classList.add("page-item");
     if (currentPage === totalPages) nextItem.classList.add("disabled");
